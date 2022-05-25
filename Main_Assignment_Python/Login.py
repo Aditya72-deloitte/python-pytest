@@ -1,9 +1,9 @@
-
 from AdminLogin import AdminLogin
 from UserLogin import UserLogin
+from UserPage import UserPage
 
 
-class Login(AdminLogin, UserLogin):
+class Login(AdminLogin, UserLogin, UserPage):
     def __init__(self):
         # ******Welcome to BookMyShow *******
         # User: Admin
@@ -29,8 +29,10 @@ class Login(AdminLogin, UserLogin):
             # user_login()
             UserLogin.__init__(self)
             var = UserLogin.verifyCredentials(self, self.username, self.userpass)
+            name = self.username
             if var == 1:
-                UserLogin.insideUserLogin(self)
+                print("*****Welcome", name, "*****")
+                UserPage.__init__(self)
 
         else:
             print("Enter the valid choice")

@@ -26,6 +26,3 @@ class UserLogin:
                         flag = flag + 1
         if flag == i:
             print("Wrong Credentials")
-
-    def insideUserLogin(self):
-        print("*******Welcome User******")

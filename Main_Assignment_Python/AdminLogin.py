@@ -1,9 +1,11 @@
 from _csv import reader
 
 from AddMovies import AddMovies
+from DeleteMovie import DeleteMovie
+from EditMovies import EditMovies
 
 
-class AdminLogin(AddMovies):
+class AdminLogin(AddMovies, EditMovies, DeleteMovie):
     def __init__(self):
         print("******Welcome to BookMyShow*******")
         print("Enter your credentials")
@@ -45,9 +47,10 @@ class AdminLogin(AddMovies):
                 AddMovies.appendingMoviesfile(self, self.lst)
             elif choice == 2:
                 # editMovie()
-                print("Inside Edit movies")
+                EditMovies.__init__(self)
+                EditMovies.editingCredentials(self, self.moviename)
             elif choice == 3:
                 # deleteMovie()
-                print("Inside delete Movies")
+                DeleteMovie.__init__(self)
             else:
                 print("Enter Valid Choice")
