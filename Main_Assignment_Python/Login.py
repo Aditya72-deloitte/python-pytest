@@ -1,9 +1,9 @@
 from AdminLogin import AdminLogin
 from UserLogin import UserLogin
-from UserPage import UserPage
+from UserPage import user_Login
 
 
-class Login(AdminLogin, UserLogin, UserPage):
+class Login(AdminLogin, UserLogin):
     def __init__(self):
         # ******Welcome to BookMyShow *******
         # User: Admin
@@ -32,7 +32,7 @@ class Login(AdminLogin, UserLogin, UserPage):
             name = self.username
             if var == 1:
                 print("*****Welcome", name, "*****")
-                UserPage.__init__(self)
+                user_Login(name)
 
         else:
             print("Enter the valid choice")
